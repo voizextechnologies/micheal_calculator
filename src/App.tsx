@@ -181,7 +181,7 @@ const SavingsCalculator = () => {
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   Gypcrete Underlayment
                 </h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 text-sm text-center">
                   Replace OSB + Gypcrete with OSB + MAXTERRA Underlayment
                 </p>
               </button>

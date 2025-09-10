@@ -172,14 +172,9 @@ const SavingsCalculator = () => {
                     : 'border-gray-200 hover:border-orange-300'
                 }`}
               >
-                <p className="text-orange-600 text-xs font-semibold mb-1">
-                  Wet Gypsum
-                </p>
-                <p className="text-orange-600 text-xs font-semibold mb-1">
-                  Wet Gypsum
-                </p>
+                
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  Underlayment
+                  Wet Gypsum
                 </h3>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   Underlayment

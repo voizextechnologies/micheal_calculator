@@ -156,12 +156,6 @@ const SavingsCalculator = () => {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-4">
               <Calculator className="w-8 h-8 text-orange-600" />
             </div>
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              Find Out How Much Time and Money You Can Save
-            </h1>
-            <p className="text-xl text-gray-600 mb-2">
-              Skipping Gypcrete — In 60 Seconds
-            </p>
           </div>
 
           <div className="max-w-2xl mx-auto">
@@ -172,13 +166,13 @@ const SavingsCalculator = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <button
                 onClick={() => setProjectType('gypcrete')}
-                className={`p-6 rounded-xl border-2 text-center transition-all duration-200 ${
+                className={`p-6 rounded-xl border-2 transition-all duration-200 ${
                   projectType === 'gypcrete' 
                     ? 'border-orange-500 bg-orange-50' 
                     : 'border-gray-200 hover:border-orange-300'
                 }`}
               >
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center">
                   Gypcrete Underlayment
                 </h3>
                 <p className="text-gray-600 text-sm text-center">

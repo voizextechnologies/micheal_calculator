@@ -159,7 +159,7 @@ const SavingsCalculator = () => {
           </div>
 
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
+            <h2 className="text-2xl font-normal text-gray-900 mb-6 text-center">
               What are you looking to replace?
             </h2>
             
@@ -175,7 +175,7 @@ const SavingsCalculator = () => {
                 
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   Wet Gypsum
-                </h3>
+                <h3 className="text-lg font-medium text-gray-900 mb-2">
                 
                 <p className="text-gray-600 text-sm">
                   Replace OSB + Wet Gypsum with 
@@ -193,7 +193,7 @@ const SavingsCalculator = () => {
                     : 'border-gray-200 hover:border-orange-300'
                 }`}
               >
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                <h3 className="text-lg font-medium text-gray-900 mb-2">
                   Entire Subfloor System
                 </h3>
                 <p className="text-gray-600 text-sm">
@@ -210,7 +210,7 @@ const SavingsCalculator = () => {
               <div className="text-center">
                 <button
                   onClick={() => setStep(2)}
-                  className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-200 flex items-center justify-center mx-auto"
+                  className="bg-orange-500 text-white px-8 py-3 rounded-lg font-medium hover:bg-orange-600 transition-all duration-200 flex items-center justify-center mx-auto"
                 >
                   Continue
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -252,27 +252,27 @@ const SavingsCalculator = () => {
 
           <div className="max-w-2xl mx-auto space-y-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-normal text-gray-700 mb-2">
                 Project Size (sq ft)
               </label>
               <input
                 type="number"
                 value={projectSize}
                 onChange={(e) => setProjectSize(Number(e.target.value))}
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:outline-none text-lg"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-orange-500 focus:outline-none"
                 min="100"
                 step="100"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-normal text-gray-700 mb-2">
                 Building Type
               </label>
               <select
                 value={buildingType}
                 onChange={(e) => setBuildingType(e.target.value)}
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:outline-none text-lg"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-orange-500 focus:outline-none"
               >
                 <option value="">Select building type...</option>
                 <option value="multifamily">Multi-family Residential</option>
@@ -286,13 +286,13 @@ const SavingsCalculator = () => {
 
             {projectType === 'subfloor' && (
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-normal text-gray-700 mb-2">
                   Current Subfloor Product
                 </label>
                 <select
                   value={competitorType}
                   onChange={(e) => setCompetitorType(e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:outline-none text-lg"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-orange-500 focus:outline-none"
                 >
                   <option value="">Select current product...</option>
                   <option value="structocrete">STRUCTO-CRETE</option>
@@ -308,9 +308,9 @@ const SavingsCalculator = () => {
               <button
                 onClick={handleCalculate}
                 disabled={projectType === 'subfloor' && (!competitorType || !buildingType)}
-                className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-12 py-4 rounded-lg text-xl font-bold hover:shadow-2xl transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-orange-500 text-white px-8 py-3 rounded-lg font-medium hover:bg-orange-600 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Calculate My Savings
+                Calculate Your Savings
               </button>
             </div>
           </div>
@@ -337,37 +337,37 @@ const SavingsCalculator = () => {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
               <DollarSign className="w-8 h-8 text-green-600" />
             </div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">Your Potential Savings</h2>
+            <h2 className="text-2xl font-normal text-gray-900 mb-2">Complete Savings Analysis</h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl p-6 text-white">
+            <div className="bg-green-500 rounded-xl p-6 text-white">
               <div className="flex items-center justify-between mb-4">
                 <DollarSign className="w-8 h-8" />
-                <span className="text-3xl font-bold">${results.savings.toLocaleString()}</span>
+                <span className="text-2xl font-medium">${results.savings.toLocaleString()}</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Total Project Savings</h3>
-              <p className="text-green-100">That's {results.percentSavings}% less than {results.competitorName || 'gypcrete'}!</p>
+              <h3 className="text-lg font-medium mb-2">Total Project Savings</h3>
+              <p className="text-green-100 text-sm">That's {results.percentSavings}% less than {results.competitorName || 'gypcrete'}!</p>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-500 to-cyan-600 rounded-xl p-6 text-white">
+            <div className="bg-blue-500 rounded-xl p-6 text-white">
               <div className="flex items-center justify-between mb-4">
                 <TrendingDown className="w-8 h-8" />
-                <span className="text-3xl font-bold">${(results.currentCostPerSF - results.maxterraCostPerSF).toFixed(2)}</span>
+                <span className="text-2xl font-medium">${(results.currentCostPerSF - results.maxterraCostPerSF).toFixed(2)}</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Cost Savings per SF</h3>
-              <p className="text-blue-100">${results.maxterraCostPerSF.toFixed(2)} vs ${results.currentCostPerSF.toFixed(2)}</p>
+              <h3 className="text-lg font-medium mb-2">Cost Savings per SF</h3>
+              <p className="text-blue-100 text-sm">${results.maxterraCostPerSF.toFixed(2)} vs ${results.currentCostPerSF.toFixed(2)}</p>
             </div>
           </div>
 
           <div className="bg-gray-50 rounded-xl p-6 mb-8">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">Cost Breakdown</h3>
+            <h3 className="text-lg font-medium text-gray-900 mb-4">Cost Breakdown</h3>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold text-gray-700 mb-3">
+                <h4 className="font-medium text-gray-700 mb-3">
                   {results.type === 'gypcrete' ? 'Current System (OSB + Gypcrete)' : `Current System (${results.competitorName})`}
                 </h4>
-                <div className="text-2xl font-bold text-gray-900">
+                <div className="text-xl font-medium text-gray-900">
                   ${results.currentCost.toLocaleString()}
                 </div>
                 <div className="text-sm text-gray-600">
@@ -375,10 +375,10 @@ const SavingsCalculator = () => {
                 </div>
               </div>
               <div>
-                <h4 className="font-semibold text-gray-700 mb-3">
+                <h4 className="font-medium text-gray-700 mb-3">
                   {results.type === 'gypcrete' ? 'MAXTERRA System (OSB + Underlayment)' : 'MAXTERRA Subfloor'}
                 </h4>
-                <div className="text-2xl font-bold text-green-600">
+                <div className="text-xl font-medium text-green-600">
                   ${results.maxterraCost.toLocaleString()}
                 </div>
                 <div className="text-sm text-gray-600">
@@ -390,7 +390,7 @@ const SavingsCalculator = () => {
 
           {results.type === 'subfloor' && (
             <div className="bg-gray-50 rounded-xl p-6 mb-6">
-              <h4 className="font-semibold text-gray-700 mb-3">Calculation Details</h4>
+              <h4 className="font-medium text-gray-700 mb-3">Calculation Details</h4>
               <div className="text-gray-600 text-sm space-y-1">
                 <p>• {competitorData[competitorType]?.spacingNote}</p>
                 {competitorData[competitorType]?.constructionNote && (
@@ -402,7 +402,7 @@ const SavingsCalculator = () => {
           )}
 
           <div className="text-center">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
+            <h3 className="text-lg font-medium text-gray-900 mb-4">
               Get Your Complete Savings Analysis
             </h3>
             <p className="text-gray-600 mb-6">
@@ -417,12 +417,12 @@ const SavingsCalculator = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email address"
-                  className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:outline-none"
+                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:border-orange-500 focus:outline-none"
                 />
                 <button
                   onClick={handleGetFullReport}
                   disabled={!email}
-                  className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="bg-orange-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-orange-600 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Get Report
                 </button>
@@ -457,19 +457,19 @@ const SavingsCalculator = () => {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 mb-8">
-          <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl p-6 text-white">
+          <div className="bg-green-500 rounded-xl p-6 text-white">
             <DollarSign className="w-10 h-10 mb-4" />
-            <div className="text-3xl font-bold mb-2">${results.savings.toLocaleString()}</div>
-            <h3 className="text-lg font-semibold">Total Savings</h3>
+            <div className="text-2xl font-medium mb-2">${results.savings.toLocaleString()}</div>
+            <h3 className="text-base font-medium">Total Savings</h3>
             <p className="text-green-100 text-sm">{results.percentSavings}% cost reduction</p>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-500 to-cyan-600 rounded-xl p-6 text-white">
+          <div className="bg-blue-500 rounded-xl p-6 text-white">
             <Clock className="w-10 h-10 mb-4" />
-            <div className="text-3xl font-bold mb-2">
+            <div className="text-2xl font-medium mb-2">
               {results.type === 'gypcrete' ? '7+' : 'Faster'}
             </div>
-            <h3 className="text-lg font-semibold">
+            <h3 className="text-base font-medium">
               {results.type === 'gypcrete' ? 'Days Saved' : 'Installation'}
             </h3>
             <p className="text-blue-100 text-sm">
@@ -477,17 +477,17 @@ const SavingsCalculator = () => {
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-purple-500 to-indigo-600 rounded-xl p-6 text-white">
+          <div className="bg-purple-500 rounded-xl p-6 text-white">
             <Building className="w-10 h-10 mb-4" />
-            <div className="text-3xl font-bold mb-2">ICC-ESR</div>
-            <h3 className="text-lg font-semibold">Certified</h3>
+            <div className="text-2xl font-medium mb-2">ICC-ESR</div>
+            <h3 className="text-base font-medium">Certified</h3>
             <p className="text-purple-100 text-sm">Third-party validated performance</p>
           </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 mb-8">
           <div className="bg-gray-50 rounded-xl p-6">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">Key Advantages</h3>
+            <h3 className="text-lg font-medium text-gray-900 mb-4">Key Advantages</h3>
             <div className="space-y-3">
               {results.additionalBenefits.map((benefit, index) => (
                 <div key={index} className="flex items-start">
@@ -499,7 +499,7 @@ const SavingsCalculator = () => {
           </div>
 
           <div className="bg-gray-50 rounded-xl p-6">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">Additional Value</h3>
+            <h3 className="text-lg font-medium text-gray-900 mb-4">Additional Value</h3>
             <div className="space-y-3">
               <div className="flex items-start">
                 <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
@@ -521,16 +521,16 @@ const SavingsCalculator = () => {
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-orange-500 to-red-600 rounded-xl p-6 text-white text-center">
-          <h3 className="text-2xl font-bold mb-4">Ready to Start Saving?</h3>
+        <div className="bg-orange-500 rounded-xl p-6 text-white text-center">
+          <h3 className="text-xl font-medium mb-4">Ready to Start Saving?</h3>
           <p className="mb-6 text-lg">
             These savings are just the beginning. Let's discuss how MAXTERRA can optimize your specific project.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-200">
+            <button className="bg-white text-orange-600 px-8 py-3 rounded-lg font-medium hover:bg-gray-50 transition-all duration-200">
               Request Quote
             </button>
-            <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-all duration-200">
+            <button className="border border-white text-white px-8 py-3 rounded-lg font-medium hover:bg-white hover:text-orange-600 transition-all duration-200">
               Schedule Consultation
             </button>
           </div>

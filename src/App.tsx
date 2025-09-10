@@ -202,9 +202,7 @@ const SavingsCalculator = () => {
                 <p className="text-gray-600 text-xs">
                   MgO Non-Combustible Single Layer Structural Floor Panels
                 </p>
-                <p className="text-gray-600 text-xs">
-                  MgO Non-Combustible Single Layer Structural Floor Panels
-                </p>
+                
               </button>
             </div>
 

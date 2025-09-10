@@ -172,7 +172,7 @@ const SavingsCalculator = () => {
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <button
                 onClick={() => setProjectType('gypcrete')}
-                className={`p-6 rounded-xl border-2 text-left transition-all duration-200 ${
+                className={`p-6 rounded-xl border-2 text-center transition-all duration-200 ${
                   projectType === 'gypcrete' 
                     ? 'border-orange-500 bg-orange-50' 
                     : 'border-gray-200 hover:border-orange-300'

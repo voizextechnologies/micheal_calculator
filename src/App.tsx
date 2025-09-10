@@ -116,8 +116,7 @@ const SavingsCalculator = () => {
         ]
       };
     } else {
-      // For simplified version, use STRUCTO-CRETE as default competitor
-      const competitor = competitorData['structocrete'];
+      const competitor = competitorData[competitorType];
       const currentCost = competitor.competitorCost * projectSize;
       const maxterraCost = competitor.maxterraCost * projectSize;
       const savings = currentCost - maxterraCost;
@@ -157,12 +156,19 @@ const SavingsCalculator = () => {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-4">
               <Calculator className="w-8 h-8 text-orange-600" />
             </div>
-            <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-              What are you looking to replace?
-            </h2>
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+              Find Out How Much Time and Money You Can Save
+            </h1>
+            <p className="text-xl text-gray-600 mb-2">
+              Skipping Gypcrete — In 60 Seconds
+            </p>
           </div>
 
           <div className="max-w-2xl mx-auto">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
+              What are you looking to replace?
+            </h2>
+            
             <div className="grid md:grid-cols-2 gap-4 mb-8">
               <button
                 onClick={() => setProjectType('gypcrete')}
@@ -173,8 +179,11 @@ const SavingsCalculator = () => {
                 }`}
               >
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  Wet Gypsum Underlayment
+                  Gypcrete Underlayment
                 </h3>
+                <p className="text-gray-600 text-sm">
+                  Replace OSB + Gypcrete with OSB + MAXTERRA Underlayment
+                </p>
               </button>
 
               <button
@@ -188,6 +197,9 @@ const SavingsCalculator = () => {
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   Entire Subfloor System
                 </h3>
+                <p className="text-gray-600 text-sm">
+                  Replace competitor subfloor with MAXTERRA Single Layer Subfloor
+                </p>
               </button>
             </div>
 
@@ -223,13 +235,11 @@ const SavingsCalculator = () => {
           </div>
 
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-4">
-              <Calculator className="w-8 h-8 text-orange-600" />
-            </div>
-            <h2 className="text-2xl font-semibold text-gray-900 mb-6">Project Details</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Project Details</h2>
+            <p className="text-gray-600">Tell us about your project for accurate savings calculations</p>
           </div>
 
-          <div className="max-w-md mx-auto">
+          <div className="max-w-2xl mx-auto space-y-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Project Size (sq ft)
@@ -244,12 +254,52 @@ const SavingsCalculator = () => {
               />
             </div>
 
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Building Type
+              </label>
+              <select
+                value={buildingType}
+                onChange={(e) => setBuildingType(e.target.value)}
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:outline-none text-lg"
+              >
+                <option value="">Select building type...</option>
+                <option value="multifamily">Multi-family Residential</option>
+                <option value="hotel">Hotel/Hospitality</option>
+                <option value="commercial">Commercial Office</option>
+                <option value="retail">Retail/Mixed-use</option>
+                <option value="singlefamily">Single-family Residential</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            {projectType === 'subfloor' && (
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Current Subfloor Product
+                </label>
+                <select
+                  value={competitorType}
+                  onChange={(e) => setCompetitorType(e.target.value)}
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:outline-none text-lg"
+                >
+                  <option value="">Select current product...</option>
+                  <option value="structocrete">STRUCTO-CRETE</option>
+                  <option value="exacor">EXACOR</option>
+                  <option value="megaboard">MEGABOARD</option>
+                  <option value="dragonboard">DragonBoard</option>
+                  <option value="nocom">NOCOM</option>
+                </select>
+              </div>
+            )}
+
             <div className="text-center pt-4">
               <button
                 onClick={handleCalculate}
-                className="w-full bg-gradient-to-r from-orange-500 to-red-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-lg transition-all duration-200"
+                disabled={projectType === 'subfloor' && (!competitorType || !buildingType)}
+                className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-12 py-4 rounded-lg text-xl font-bold hover:shadow-2xl transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Calculate Your Savings
+                Calculate My Savings
               </button>
             </div>
           </div>

@@ -175,6 +175,12 @@ const SavingsCalculator = () => {
                 <p className="text-orange-600 text-xs font-semibold mb-1">
                   Wet Gypsum
                 </p>
+                <p className="text-orange-600 text-xs font-semibold mb-1">
+                  Wet Gypsum
+                </p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Underlayment
+                </h3>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   Underlayment
                 </h3>
@@ -199,6 +205,9 @@ const SavingsCalculator = () => {
                 </h3>
                 <p className="text-gray-600 text-sm">
                   Replace subfloor with MAXTERRA
+                </p>
+                <p className="text-gray-600 text-xs">
+                  MgO Non-Combustible Single Layer Structural Floor Panels
                 </p>
                 <p className="text-gray-600 text-xs">
                   MgO Non-Combustible Single Layer Structural Floor Panels

@@ -156,12 +156,6 @@ const SavingsCalculator = () => {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-4">
               <Calculator className="w-8 h-8 text-orange-600" />
             </div>
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              Find Out How Much Time and Money You Can Save
-            </h1>
-            <p className="text-xl text-gray-600 mb-2">
-              Skipping Gypcrete — In 60 Seconds
-            </p>
           </div>
 
           <div className="max-w-2xl mx-auto">
@@ -178,11 +172,17 @@ const SavingsCalculator = () => {
                     : 'border-gray-200 hover:border-orange-300'
                 }`}
               >
+                <p className="text-orange-600 text-xs font-semibold mb-1">
+                  Wet Gypsum
+                </p>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  Gypcrete Underlayment
+                  Underlayment
                 </h3>
                 <p className="text-gray-600 text-sm">
-                  Replace OSB + Gypcrete with OSB + MAXTERRA Underlayment
+                  Replace OSB + MAXTERRA Underlayment
+                </p>
+                <p className="text-gray-600 text-xs">
+                  MgO Fire- and Water-Resistant Underlayment
                 </p>
               </button>
 
@@ -198,7 +198,10 @@ const SavingsCalculator = () => {
                   Entire Subfloor System
                 </h3>
                 <p className="text-gray-600 text-sm">
-                  Replace competitor subfloor with MAXTERRA Single Layer Subfloor
+                  Replace subfloor with MAXTERRA
+                </p>
+                <p className="text-gray-600 text-xs">
+                  MgO Non-Combustible Single Layer Structural Floor Panels
                 </p>
               </button>
             </div>

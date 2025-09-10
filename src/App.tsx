@@ -186,21 +186,7 @@ const SavingsCalculator = () => {
                 </p>
               </button>
 
-              <button
-                onClick={() => setProjectType('subfloor')}
-                className={`p-6 rounded-xl border-2 text-left transition-all duration-200 ${
-                  projectType === 'subfloor' 
-                    ? 'border-orange-500 bg-orange-50' 
-                    : 'border-gray-200 hover:border-orange-300'
-                }`}
-              >
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  Entire Subfloor System
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  Replace competitor subfloor with MAXTERRA Single Layer Subfloor
-                </p>
-              </button>
+              
             </div>
 
             {projectType && (

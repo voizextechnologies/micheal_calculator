@@ -59,7 +59,7 @@ function App() {
                   Replace subfloor with MAXTERRA
                 </p>
                 <p className="text-gray-600 text-xs">
-                  MgO Non-Combustible Single Layer Structural Floor Panels
+                 <strong className="text-orange-600">MgO Non-Combustible Single Layer Structural Floor Panels</strong>
                 </p>
               </button>
             </div>

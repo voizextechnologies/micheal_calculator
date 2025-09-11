@@ -46,7 +46,7 @@ function App() {
                   Replace OSB + <strong className="text-orange-600">Wet Gypsum</strong> with MAXTERRA 
                 </p>
                 <p className="text-gray-600 text-xs">
-                  <strong className="text-orange-600"></strong>MgO Fire- and Water-Resistant Underlayment
+                  <strong className="text-orange-600"></strong>MgO Fire- and Water-Resistant Underlayment</strong>
                 </p>
               </button>
 

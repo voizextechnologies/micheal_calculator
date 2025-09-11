@@ -40,8 +40,8 @@ function App() {
                 onClick={() => handleProjectTypeSelect('gypcrete')}
                 className="p-6 border border-orange-300 rounded-lg hover:border-orange-400 transition-colors text-left"
               >
-                <p className="text-orange-600 text-xs font-medium mb-1">Wet Gypsum</p>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">Underlayment</h3>
+                
+                <h3 className="text-lg font-medium text-gray-900 mb-2"> <p className="text-orange-600 text-xs font-medium mb-1">Wet Gypsum</p> Underlayment</h3>
                 <p className="text-gray-600 text-sm mb-2">
                   Replace OSB + MAXTERRA Underlayment
                 </p>

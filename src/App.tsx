@@ -56,10 +56,10 @@ function App() {
               >
                 <h3 className="text-lg font-medium text-gray-900 mb-2">Entire Subfloor System</h3>
                 <p className="text-gray-600 text-sm mb-2">
-                  Replace subfloor with MAXTERRA
+                  Replace subfloor with MAXTERRA    <strong className="text-orange-600">MgO Non-Combustible Single Layer Structural Floor Panels</strong>
                 </p>
                 <p className="text-gray-600 text-xs">
-                 <strong className="text-orange-600">MgO Non-Combustible Single Layer Structural Floor Panels</strong>
+              
                 </p>
               </button>
             </div>
